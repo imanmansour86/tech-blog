@@ -21,7 +21,7 @@ body {
 }
 
 .card {
-  width: 100rem !important;
+  width: 80rem !important;
   background-color: rosybrown;
   border-style: double;
   border-width: 20px;
