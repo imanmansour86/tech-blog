@@ -1,0 +1,15 @@
+
+
+<div class="row">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+                {{#each blogs as |blog|}}
+            <h5 class="card-title">{{blog.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Posted by</h6>
+            <p class="card-text">
+         {{blog.body}}
+            </p>
+               {{/each}}
+          </div>
+        </div>
+       
