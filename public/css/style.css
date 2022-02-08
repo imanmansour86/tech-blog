@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://miro.medium.com/max/600/1*TNoDpLOtnk1B3h_28vsJtg.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.navbar {
+  height: 10%;
+  background-color: white !important;
+}
+
+.nav-link {
+  color: brown;
+  font-size: 26px;
+}
+
+.card {
+  width: 100rem !important;
+  background-color: rosybrown;
+  border-style: double;
+  border-width: 20px;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.blog {
+  padding: 20px;
+}
