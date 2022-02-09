@@ -1,15 +1,19 @@
 <!-- Loop over each object in the projects array -->
- {{#each blogs as |blog|}}
-<div class="row">
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-               
-            <h5 class="card-title">{{blog.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Posted by: {{blog.user.name}} on {{format_date blog.date_created}}</h6>
-            <p class="card-text">
-         {{blog.description}}
-            </p>
-         
-          </div>
-        </div>
-             {{/each}}
+{{#each blogs as |blog|}}
+  <div class="row">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+
+        <h5 class="card-title">{{blog.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Posted by:
+          {{blog.user.name}}
+          on
+          {{format_date blog.date_created}}</h6>
+        <p class="card-text">
+          {{blog.description}}
+        </p>
+
+      </div>
+    </div>
+  </div>
+{{/each}}
