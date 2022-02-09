@@ -2,9 +2,9 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
 
-class Comment extends Model {}
+class blogComment extends Model {}
 
-Comment.init(
+blogComment.init(
   {
     // define columns
     id: {
@@ -39,8 +39,8 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "comment",
+    modelName: "blog_comment",
   }
 );
 
-module.exports = Comment;
+module.exports = blogComment;

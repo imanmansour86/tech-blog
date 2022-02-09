@@ -1,3 +1,4 @@
+//require app dependencies and helpers
 const path = require("path");
 const express = require("express");
 const routes = require("./routes");
@@ -6,11 +7,12 @@ const exphbs = require("express-handlebars");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+//create handlebars.js engine object
 const hbs = exphbs.create({});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 //equip app to use handlebars
 app.engine("handlebars", hbs.engine);
