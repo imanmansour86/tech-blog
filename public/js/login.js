@@ -18,7 +18,7 @@ const loginHandler = async (e) => {
     if (response.ok) {
       console.log("redirecting to profile");
       // If successful, redirect the browser to the profile page
-      //   document.location.replace("./profile");
+      document.location.replace("./profile");
     } else {
       alert(response.statusText);
     }
