@@ -19,9 +19,6 @@ router.get("/", async (req, res) => {
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
 
-    console.log("blogs here", blogs);
-    // res.render("all", { blogs });
-
     // Pass serialized data and session flag into template
     res.render("homepage", {
       blogs,
@@ -46,12 +43,12 @@ router.get("/blog/:id", async (req, res) => {
 
     console.log("single dBlogData here", dBlogData);
 
-    const blogs = dBlogData.get({ plain: true });
+    const blog = dBlogData.get({ plain: true });
 
-    console.log("single here", blogs);
+    console.log("test single blog response", blog);
 
     res.render("blog", {
-      ...blog,
+      blog,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

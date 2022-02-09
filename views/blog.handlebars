@@ -1,12 +1,38 @@
-<div class="row">
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-               
-            <h5 class="card-title">{{title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Posted by: {{user.name}}</h6>
-            <p class="card-text">
-         {{body}}
-            </p>
-         
-          </div>
-        </div>
+     <div class="row">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+     
+          <h5 class="card-title">{{blog.title}}</h5>
+        </a>
+        <h6 class="card-subtitle mb-2 text-muted">Posted by:
+          {{blog.user.name}}
+          on
+          {{format_date blog.date_created}}</h6>
+        <p class="card-text">
+          {{blog.description}}
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <form class="blog">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Blog title</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="Enter blog title"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+  </div>
+  <button>+ New blog</button>
+</form>
