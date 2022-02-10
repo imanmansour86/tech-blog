@@ -42,8 +42,6 @@ router.get("/blog/:id", async (req, res) => {
 
     const blog = dBlogData.get({ plain: true });
 
-    console.log("test single blog on click", blog);
-
     res.render("singleblog", {
       blog,
       logged_in: req.session.logged_in,
@@ -73,12 +71,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ],
     });
 
-    console.log("dashboard for a single user is", dBlogData);
-
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
-
-    console.log("test single blog response", blogs);
 
     res.render("dashboard", {
       blogs,
