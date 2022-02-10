@@ -16,6 +16,18 @@ This app is a CMS-style blog site, where users can publish their blog posts and 
 
 ## Table of Contents
 
+- [Tech-blog](#tech-blog)
+  - [Deployed Link](#deployed-link)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Built With](#built-with)
+  - [Resources Used](#resources-used)
+  - [Author](#author)
+  - [License](#license)
+
 ## Installation
 
 - Go to the app's [repo](https://github.com/imanmansour86/tech-blog) in github and clone the app
@@ -52,13 +64,11 @@ This app is a CMS-style blog site, where users can publish their blog posts and 
 
 ## Usage
 
-![Tag]()
+![]()
 
 ## Features
 
 When the page first loads, user is presented with the homepage, which includes existing blog posts and navigation links for the homepage and the dashboard. After click on the dashboad, the user is prompted to either sign up or sign in. When the user signs in or signs up, he can view the dashbooard and click on blog posts in the homepage. The homepage shows all blog posts that are written, showing the title and creation date. The user can click on any blog post in the homepage and he is presented with the blog title, contents, blog creator’s username and date created, as well as an option to leave a comment. The dashboard presents the user with any blog posts he has already created and the option to add a new blog post. User can also delete and modify blogs posts from the dashboard. The user has the option to logout by clicking on the button in the navigation. If the user is idle on the page for more than a set time, then the session ends and he is automatically signed out of the site
-
-## Tests
 
 ## Built With
 
