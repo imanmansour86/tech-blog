@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+//check authentication for a logged in user
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-
+    console.log("pw", validPassword);
     console.log("user data is");
 
     if (!validPassword) {

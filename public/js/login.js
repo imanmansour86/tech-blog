@@ -16,9 +16,9 @@ const loginHandler = async (e) => {
     });
 
     if (response.ok) {
-      console.log("redirecting to profile");
+      console.log("redirecting to main page");
       // If successful, redirect the browser to the profile page
-      document.location.replace("./profile");
+      document.location.replace("./");
     } else {
       alert(response.statusText);
     }
@@ -40,7 +40,7 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("./");
     } else {
       alert(response.statusText);
     }
