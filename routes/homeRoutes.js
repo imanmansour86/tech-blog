@@ -73,6 +73,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
+    console.log("user blogs", blogs);
 
     res.render("dashboard", {
       blogs,
