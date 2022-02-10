@@ -15,12 +15,11 @@
   <body>
     <nav class="navbar navbar-dark bg-dark">
       <nav class="nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-          <a class="nav-link" href="#">Profile</a>
 
           <a class="nav-link" id="logout">Logout</a>
         {{else}}

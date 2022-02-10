@@ -42,7 +42,9 @@ router.get("/blog/:id", async (req, res) => {
 
     const blog = dBlogData.get({ plain: true });
 
-    res.render("blog", {
+    console.log("test single blog on click", blog);
+
+    res.render("singleblog", {
       blog,
       logged_in: req.session.logged_in,
     });

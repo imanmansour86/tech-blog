@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <a href="/blog/{{blog.id}}">
+        <h5 class="card-title">{{blog.title}}</h5>
+      </a>
+      <h6 class="card-subtitle mb-2 text-muted">Posted by:
+        {{blog.user.name}}
+        on
+        {{format_date blog.date_created}}
+      </h6>
+      <p class="card-text">
+        {{blog.description}}
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <h2>Add a Comment</h2>
+  <form id="comment" class="blog">
+    <div class="mb-3">
+      <label
+        for="exampleFormControlTextarea1"
+        class="form-label"
+      >Comment</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <button>Submit</button>
+  </form>
+</div>

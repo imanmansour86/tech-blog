@@ -1,8 +1,8 @@
-     {{#each blogs as |blog|}}
-     <div class="row">
+{{#each blogs as |blog|}}
+  <div class="row">
     <div class="card" style="width: 18rem">
       <div class="card-body">
-     
+        <a href="/blog/{{blog.id}}">
           <h5 class="card-title">{{blog.title}}</h5>
         </a>
         <h6 class="card-subtitle mb-2 text-muted">Posted by:
@@ -18,24 +18,29 @@
   </div>
 {{/each}}
 
-<h1>Add a new blog</h1>
+<div>
+  <h1>Add a new blog</h1>
   <form class="blog">
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Blog title</label>
-    <input
-      type="email"
-      class="form-control"
-      id="exampleFormControlInput1"
-      placeholder="Enter blog title"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
-    <textarea
-      class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
-    ></textarea>
-  </div>
-  <button>+ New blog</button>
-</form>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Blog title</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Enter blog title"
+      />
+    </div>
+    <div class="mb-3">
+      <label
+        for="exampleFormControlTextarea1"
+        class="form-label"
+      >Content</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <button>+ New blog</button>
+  </form>
+</div>
