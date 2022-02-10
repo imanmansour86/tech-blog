@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Blog, User } = require("../models");
 const withAuth = require("../utils/auth");
+const { Op } = require("sequelize");
 
 // GET all blogs
 router.get("/", async (req, res) => {
@@ -13,8 +14,6 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
-    console.log("dBlogData here", dBlogData);
 
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
@@ -41,14 +40,46 @@ router.get("/blog/:id", async (req, res) => {
       ],
     });
 
-    console.log("single dBlogData here", dBlogData);
-
     const blog = dBlogData.get({ plain: true });
-
-    console.log("test single blog response", blog);
 
     res.render("blog", {
       blog,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//get a blog by username
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const dBlogData = await Blog.findAll({
+      where: {
+        user_id: {
+          [Op.eq]: req.session.user_id,
+        },
+      },
+      attributes: { exclude: ["password"] },
+
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    console.log("dashboard for a single user is", dBlogData);
+
+    // Serialize data so the template can read it
+    const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
+
+    console.log("test single blog response", blogs);
+
+    res.render("dashboard", {
+      blogs,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
