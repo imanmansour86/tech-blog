@@ -19,7 +19,7 @@
   </div>
 </div>
 <div>
-  <button id="delete-post">Delete post</button>
+  <button data-id={{blog.id}} id="delete-post">Delete post</button>
 </div>
 
 <div>Comments ADDED</div>
@@ -46,8 +46,11 @@
  {{/each}}
 
 <div>
-  <h2>Add a Comment</h2>
-  <form data-blog-id={{blog.id}} id="new-comment" class="blog">
+
+      <button id="comment-btn">Add a Comment</button>
+
+
+  <form style="display:none" data-blog-id={{blog.id}} id="new-comment" class="blog">
     <div class="mb-3">
       <label
         for="exampleFormControlTextarea1"
