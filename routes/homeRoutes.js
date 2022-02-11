@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, User } = require("../models");
+const { Blog, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 const { Op } = require("sequelize");
 
@@ -42,8 +42,28 @@ router.get("/blog/:id", withAuth, async (req, res) => {
 
     const blog = dBlogData.get({ plain: true });
 
+    const dBCommentData = await Comment.findAll({
+      where: {
+        blog_id: {
+          [Op.eq]: blog.id,
+        },
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const comments = dBCommentData.map((comment) =>
+      comment.get({ plain: true })
+    );
+
+    console.log("test comments output", comments);
     res.render("singleblog", {
       blog,
+      comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

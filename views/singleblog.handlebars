@@ -21,6 +21,30 @@
 <div>
   <button id="delete-post">Delete post</button>
 </div>
+
+<div>Comments ADDED</div>
+{{#each comments as |comment|}}
+  <div class="row">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+
+        <h5 class="card-title">{{comment.comment_text}}</h5>
+      </a>
+      <h6 class="card-subtitle mb-2 text-muted">Posted by:
+        {{comment.user.name}}
+        on
+        {{format_date comment.date_created}}
+      </h6>
+      <p class="card-text">
+        {{comment.comment_text}}
+      </p>
+
+    </div>
+  </div>
+</div>
+
+ {{/each}}
+
 <div>
   <h2>Add a Comment</h2>
   <form data-blog-id={{blog.id}} id="new-comment" class="blog">
@@ -34,5 +58,7 @@
     <button>Submit</button>
   </form>
 </div>
+
+
 
 <script src="/js/singleblog.js"></script>
