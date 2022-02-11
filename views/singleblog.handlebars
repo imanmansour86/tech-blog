@@ -1,11 +1,10 @@
 <div class="row">
- 
- 
+
   <div class="card" style="width: 18rem">
     <div class="card-body">
-      <a href="/blog/{{blog.id}}">
-        <h5 class="card-title">{{blog.title}}</h5>
-      </a>
+
+      <h5 class="card-title">{{blog.title}}</h5>
+
       <h6 class="card-subtitle mb-2 text-muted">Posted by:
         {{blog.user.name}}
         on
@@ -19,36 +18,37 @@
   </div>
 </div>
 
-
 <div>Comments Added: </div>
 {{#each comments as |comment|}}
   <div class="row">
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
 
-        <h5 class="card-title">{{comment.comment_text}}</h5>
-      </a>
-      <h6 class="card-subtitle mb-2 text-muted">Posted by:
-        {{comment.user.name}}
-        on
-        {{format_date comment.date_created}}
-      </h6>
-      <p class="card-text">
-        {{comment.comment_text}}
-      </p>
+        <h6 class="card-subtitle mb-2 text-muted">Posted by:
+          {{comment.user.name}}
+          on
+          {{format_date comment.date_created}}
+        </h6>
+        <p class="card-text">
+          {{comment.comment_text}}
+        </p>
 
+      </div>
     </div>
   </div>
-</div>
 
- {{/each}}
+{{/each}}
 
 <div>
+  <br />
+  <button id="comment-btn">Add a Comment</button>
 
-      <button id="comment-btn">Add a Comment</button>
-
-
-  <form style="display:none" data-blog-id={{blog.id}} id="new-comment" class="blog">
+  <form
+    style="display:none"
+    data-blog-id={{blog.id}}
+    id="new-comment"
+    class="blog"
+  >
     <div class="mb-3">
       <label
         for="exampleFormControlTextarea1"
@@ -59,7 +59,5 @@
     <button>Submit</button>
   </form>
 </div>
-
-
 
 <script src="/js/singleblog.js"></script>
