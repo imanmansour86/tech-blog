@@ -8,7 +8,7 @@
 
 ## Deployed Link
 
-- [Deployed](https://quiet-mesa-73726.herokuapp.com/dashboard)
+- [Deployed](https://quiet-mesa-73726.herokuapp.com/)
 
 ## Description
 

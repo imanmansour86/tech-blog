@@ -11,8 +11,6 @@ router.post("/", withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    console.log("new created blog", newBlog);
-
     res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
@@ -28,8 +26,6 @@ router.put("/:id", withAuth, async (req, res) => {
       },
       { where: { id: req.params.id } }
     );
-
-    console.log("new created blog", newBlog);
 
     res.status(200).json(newBlog);
   } catch (err) {
