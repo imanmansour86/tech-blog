@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
   }
 });
 //get a blog by id
-router.get("/blog/:id", async (req, res) => {
+router.get("/blog/:id", withAuth, async (req, res) => {
   try {
     const dBlogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -73,7 +73,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
-    console.log("user blogs", blogs);
 
     res.render("dashboard", {
       blogs,
