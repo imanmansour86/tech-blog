@@ -1,0 +1,26 @@
+<div class="row">
+  Edit post
+  {{blog.user_id}}
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <a href="/blog/{{blog.id}}">
+        <h5 class="card-title">{{blog.title}}</h5>
+      </a>
+      <h6 class="card-subtitle mb-2 text-muted">Posted by:
+        {{blog.user.name}}
+        on
+        {{format_date blog.date_created}}
+      </h6>
+      <p class="card-text">
+        {{blog.description}}
+      </p>
+
+    </div>
+  </div>
+</div>
+<div>
+  <button data-id={{blog.id}} id="delete-post">Delete post</button>
+  <button data-id={{blog.id}} id="update-post">Delete post</button>
+</div>
+
+<script src="/js/singleblogedit.js"></script>

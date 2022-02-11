@@ -60,10 +60,33 @@ router.get("/blog/:id", withAuth, async (req, res) => {
       comment.get({ plain: true })
     );
 
-    console.log("test comments output", comments);
     res.render("singleblog", {
       blog,
       comments,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//edit a blog by id
+router.get("/blog-edit/:id", withAuth, async (req, res) => {
+  try {
+    const dBlogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const blog = dBlogData.get({ plain: true });
+
+    res.render("singleblogedit", {
+      blog,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
