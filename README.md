@@ -8,7 +8,7 @@
 
 ## Deployed Link
 
-- [Demo Link]()
+- [Demo Link](https://watch.screencastify.com/v/kjrArC1r7m6RZ7GdfiC9)
 
 ## Description
 
@@ -64,7 +64,21 @@ This app is a CMS-style blog site, where users can publish their blog posts and 
 
 ## Usage
 
-![]()
+- Homepage
+
+![Homepage](/images/homepage.png)
+
+- Login
+
+![Login](/images/login.png)
+
+- Dashboard
+
+![Dashboard](/images/dashboard.png)
+
+- Update/delete blog
+
+![Update-delete](/images/update.png)
 
 ## Features
 
