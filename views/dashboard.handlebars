@@ -1,4 +1,5 @@
-<div>Welcome,{{user.name}}
+<div>Welcome,
+  {{user.name}}
 
 </div>
 {{#each blogs as |blog|}}
@@ -9,12 +10,7 @@
           <h5 class="card-title">{{blog.title}}</h5>
         </a>
         <h6 class="card-subtitle mb-2 text-muted">Posted by:
-          {{blog.user.name}}
-          on
           {{format_date blog.date_created}}</h6>
-        <p class="card-text">
-          {{blog.description}}
-        </p>
 
       </div>
     </div>
