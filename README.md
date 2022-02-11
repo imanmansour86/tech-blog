@@ -12,7 +12,7 @@
 
 ## Description
 
-This app is a CMS-style blog site, where users can publish their blog posts and comment on other people's posts as well. The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, npm bcrypt package to hash passwords and the express-session npm package for authentication.
+This app is a CMS-style blog site, where developers can publish their technical blog posts and comment on other people's posts as well. The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, npm bcrypt package to hash passwords and the express-session npm package for authentication.
 
 ## Table of Contents
 
