@@ -1,26 +1,32 @@
 <div class="row">
-  Edit post
-  {{blog.user_id}}
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <a href="/blog/{{blog.id}}">
-        <h5 class="card-title">{{blog.title}}</h5>
-      </a>
-      <h6 class="card-subtitle mb-2 text-muted">Posted by:
-        {{blog.user.name}}
-        on
-        {{format_date blog.date_created}}
-      </h6>
-      <p class="card-text">
-        {{blog.description}}
-      </p>
 
+  <form id="new-blog" class="blog">
+    <div class="mb-3">
+      <label for="blog-title" class="form-label">Blog title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="blog-title"
+        placeholder="Enter blog title"
+        value={{blog.title}}
+      />
     </div>
-  </div>
+    <div class="mb-3">
+      <label for="blog-description" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="blog-description"
+        rows="3"
+      >{{blog.description}}</textarea>
+    </div>
+
+  </form>
+
 </div>
 <div>
+
   <button data-id={{blog.id}} id="delete-post">Delete post</button>
-  <button data-id={{blog.id}} id="update-post">Delete post</button>
+  <button data-id={{blog.id}} id="update-post">Update post</button>
 </div>
 
 <script src="/js/singleblogedit.js"></script>

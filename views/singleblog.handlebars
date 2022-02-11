@@ -1,6 +1,6 @@
 <div class="row">
-  Edit post
-  {{blog.user_id}}
+ 
+ 
   <div class="card" style="width: 18rem">
     <div class="card-body">
       <a href="/blog/{{blog.id}}">
@@ -18,11 +18,9 @@
     </div>
   </div>
 </div>
-<div>
-  <button data-id={{blog.id}} id="delete-post">Delete post</button>
-</div>
 
-<div>Comments ADDED</div>
+
+<div>Comments Added: </div>
 {{#each comments as |comment|}}
   <div class="row">
   <div class="card" style="width: 18rem">

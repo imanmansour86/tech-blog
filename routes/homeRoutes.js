@@ -117,8 +117,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
     // Serialize data so the template can read it
     const blogs = dBlogData.map((blog) => blog.get({ plain: true }));
 
+    const userData = await User.findOne({ where: { id: req.session.user_id } });
+    const user = userData.get({ plain: true });
+
     res.render("dashboard", {
       blogs,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

@@ -22,29 +22,9 @@ const commentHandler = async (event) => {
   }
 };
 
-//delete a  blog
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
-
-    const response = await fetch(`/api/blogs/${id}`, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      document.location.replace("/dashboard");
-    } else {
-      alert("Failed to delete project");
-    }
-  }
-};
-
 const showComment = () => {
   document.getElementById("new-comment").style.display = "block";
 };
-document
-  .getElementById("delete-post")
-  .addEventListener("click", delButtonHandler);
 
 document
   .getElementById("new-comment")
